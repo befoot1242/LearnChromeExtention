@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>📚 英語学習単語帳</h1>
+    <div class="stats">
+      <span id="word-count">0</span> 個の単語
+    </div>
+  </div>
+  
+  <div class="controls">
+    <input type="text" id="search-input" placeholder="単語を検索...">
+    <button id="export-btn">エクスポート</button>
+    <button id="clear-all-btn">全削除</button>
+  </div>
+  
+  <div class="word-list" id="word-list">
+    <div class="no-words" id="no-words">
+      まだ単語が登録されていません。<br>
+      ウェブページで単語を選択して登録してください。
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

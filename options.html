@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英語学習単語帳 - 設定</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        h1 {
+            color: #2c5282;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .setting-section {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .setting-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        
+        .setting-description {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .radio-option:hover {
+            border-color: #3182ce;
+            background: #ebf8ff;
+        }
+        
+        .radio-option.selected {
+            border-color: #3182ce;
+            background: #ebf8ff;
+        }
+        
+        .radio-option input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+        
+        .radio-label {
+            flex: 1;
+        }
+        
+        .radio-title {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .radio-desc {
+            font-size: 13px;
+            color: #718096;
+        }
+        
+        .save-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .save-btn {
+            background: #3182ce;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .save-btn:hover {
+            background: #2c5282;
+        }
+        
+        .success-message {
+            display: none;
+            background: #48bb78;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 英語学習単語帳の設定</h1>
+    
+    <div class="setting-section">
+        <div class="setting-title">単語登録のトリガー方法</div>
+        <div class="setting-description">
+            単語を選択した後、どのような操作で登録ポップアップを表示するかを選択してください。
+        </div>
+        
+        <div class="radio-group">
+            <label class="radio-option" for="trigger-selection">
+                <input type="radio" id="trigger-selection" name="trigger" value="selection" />
+                <div class="radio-label">
+                    <div class="radio-title">選択するだけ（現在の設定）</div>
+                    <div class="radio-desc">テキストを選択すると自動的に登録ポップアップが表示されます</div>
+                </div>
+            </label>
+            
+            <label class="radio-option" for="trigger-click">
+                <input type="radio" id="trigger-click" name="trigger" value="click" />
+                <div class="radio-label">
+                    <div class="radio-title">選択 + 左クリック</div>
+                    <div class="radio-desc">テキストを選択した後、選択範囲を左クリックすると登録ポップアップが表示されます</div>
+                </div>
+            </label>
+            
+            <label class="radio-option" for="trigger-key">
+                <input type="radio" id="trigger-key" name="trigger" value="key" />
+                <div class="radio-label">
+                    <div class="radio-title">選択 + Enterキー</div>
+                    <div class="radio-desc">テキストを選択した後、Enterキーを押すと登録ポップアップが表示されます</div>
+                </div>
+            </label>
+        </div>
+    </div>
+    
+    <div class="save-section">
+        <button class="save-btn" id="saveButton">設定を保存</button>
+        <div class="success-message" id="successMessage">
+            設定が保存されました！
+        </div>
+    </div>
+    
+    <script src="options.js"></script>
+</body>
+</html>
